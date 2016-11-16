@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: psa64_sigloss.aux
+The style file: apj.bst
+Database file #1: psa64_siglossNotes.bib
+Database file #2: biblio.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 36 entries,
+            3085 wiz_defined-function locations,
+            898 strings with 24195 characters,
+and the built_in function-call counts, 24498 in all, are:
+= -- 1413
+> -- 2941
+< -- 8
++ -- 971
+- -- 1013
+* -- 2630
+:= -- 4956
+add.period$ -- 36
+call.type$ -- 36
+change.case$ -- 212
+chr.to.int$ -- 34
+cite$ -- 36
+duplicate$ -- 681
+empty$ -- 1020
+format.name$ -- 1063
+if$ -- 4545
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 36
+newline$ -- 112
+num.names$ -- 144
+pop$ -- 214
+preamble$ -- 1
+purify$ -- 212
+quote$ -- 0
+skip$ -- 581
+stack$ -- 0
+substring$ -- 782
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 324
+warning$ -- 0
+while$ -- 127
+width$ -- 0
+write$ -- 363
