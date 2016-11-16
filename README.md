@@ -1,2 +1,2 @@
-# primsim_runs
-configurations and code used to run PRISim
+# psa64_sigloss
+PAPER-64 OQE signal loss paper
