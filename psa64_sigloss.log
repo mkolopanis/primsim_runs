@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.20)  15 NOV 2016 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.20)  17 NOV 2016 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,68 +520,81 @@ File: ./data/ali_upperlims.png Graphic file (type png)
 <use ./data/ali_upperlims.png>
 Package pdftex.def Info: ./data/ali_upperlims.png used on input line 154.
 (pdftex.def)             Requested size: 230.90128pt x 173.17365pt.
-
-
-LaTeX Warning: Reference `fig:optimal_vs_ali' on page 2 undefined on input line
- 169.
-
-
-LaTeX Warning: Reference `fig:optimal_vs_ali' on page 2 undefined on input line
- 171.
-
-<./data/ali_reconstruction_loss_curve.png, id=189, 505.89pt x 505.89pt>
+ [2 <./data/ali_upperlims.png>]
+<./data/ali_reconstruction_loss_curve.png, id=232, 505.89pt x 505.89pt>
 File: ./data/ali_reconstruction_loss_curve.png Graphic file (type png)
 
 <use ./data/ali_reconstruction_loss_curve.png>
 Package pdftex.def Info: ./data/ali_reconstruction_loss_curve.png used on input
- line 193.
+ line 231.
 (pdftex.def)             Requested size: 230.90128pt x 230.90591pt.
 
-<./data/ali_noise_loss_curve.png, id=190, 505.89pt x 505.89pt>
+<./data/ali_noise_loss_curve.png, id=233, 505.89pt x 505.89pt>
 File: ./data/ali_noise_loss_curve.png Graphic file (type png)
 
 <use ./data/ali_noise_loss_curve.png>
-Package pdftex.def Info: ./data/ali_noise_loss_curve.png used on input line 203
+Package pdftex.def Info: ./data/ali_noise_loss_curve.png used on input line 241
 .
 (pdftex.def)             Requested size: 230.90128pt x 230.90591pt.
- (./psa64_sigloss.bbl [2 <./data/ali_upperlims.png>] [3 <./data/ali_reconstruct
-ion_loss_curve.png> <./data/ali_noise_loss_curve.png>]) [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
- (./psa64_sigloss.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 218.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
+
+<./data/ali_noise_probability.png, id=234, 578.16pt x 433.62pt>
+File: ./data/ali_noise_probability.png Graphic file (type png)
+
+<use ./data/ali_noise_probability.png>
+Package pdftex.def Info: ./data/ali_noise_probability.png used on input line 25
+0.
+(pdftex.def)             Requested size: 230.90128pt x 173.17365pt.
+ (./psa64_sigloss.bbl [3 <./data/ali_reconstruction_loss_curve.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 159.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 159.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+) [4 <./data/ali_noise_loss_curve.png> <./data/ali_noise_probability.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
+
+(./psa64_sigloss.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
 Package rerunfilecheck Info: File `psa64_sigloss.out' has not changed.
 (rerunfilecheck)             Checksum: 9926CAB728D2CE2A7791890A6EE232CE;271.
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 9012 strings out of 493029
- 126324 string characters out of 6136234
- 284170 words of memory out of 5000000
- 12375 multiletter control sequences out of 15000+600000
- 13625 words of font info for 56 fonts, out of 8000000 for 9000
+ 9033 strings out of 493029
+ 126708 string characters out of 6136234
+ 256925 words of memory out of 5000000
+ 12385 multiletter control sequences out of 15000+600000
+ 13937 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,35p,1131b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,7n,35p,1131b,570s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on psa64_sigloss.pdf (4 pages, 317051 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt8.pfb>
+Output written on psa64_sigloss.pdf (4 pages, 475864 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 332 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

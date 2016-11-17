@@ -142,7 +142,7 @@ as a way to avoid foregrounds
  dillon_et_al2015,liu_et_al2014a,
  liu_et_al2014b,trott_et_al2012}). These OQEs rely on empirical estimation of data's covariance and as a result may produce signal loss due to over fitting of noise ( A15, \citet{dillon_et_al2015,switzer_liu2014}). Some techniques have been proposed to avoid information loss like the use of eigenmode projection \citep{dillon_et_al2015} or reducing temporal covariance through sub-optimal filtering in A15. 
  
- We find, however, the characterization and presence of information loss in these studies is insufficient and the effect is more prevalent that previously expected. Our investigation focuses on the technique and data used in A15. We offer a new method do characterize and account for these effects in power spectrum estimation using OQEs.
+ We find, however, the characterization and presence of information loss in these studies is insufficient and the effect is more prevalent that previously expected. Our investigation focuses on the technique and data used in A15. We offer a new method to characterize and account for these effects in power spectrum estimation using OQEs.
 
 
 This paper is organized as follows: we provide an review of the mathematics of OQE's in \autoref{sec:oqe}. Our investigation of information loss and new method to overcome this effect is described in \autoref{sec:sigloss}. We conclude with a discussion of these findings in \autoref{sec:discussion}.
@@ -157,6 +157,43 @@ This paper is organized as follows: we provide an review of the mathematics of O
 
 \section{The Optimal Quadratic Estimator}\label{sec:oqe}{
 
+The optimal quadratic estimator relies on the formalism of the work done by \citet{tegmark1997} and expanded to the 21cm signal in \citet{liu_tegmark2011}. The estimator is developed to help provide an improved estimate of the underlying 21cm power spectrum in the presence of foreground contaminations. Ideally the 21cm power spectrum ($P_{21}$) is defined:
+
+\begin{equation}
+\left\langle \tilde{T}_{b}(\mathbf{k}) \tilde{T}_{b}^{\star}(\mathbf{k'}) \right\rangle = \left( 2\pi \right)^{3} \delta(\mathbf{k} - \mathbf{k'}) P_{21}(\mathbf{k})
+\end{equation}
+where brackets denote ensemble averages, $\tilde{T}_{b}(\mathbf{k})$ is the Fourier transform of the 21cm brightness temperature and $\delta$ is the Dirac delta function. As in A15, the quadratic estimation of this power spectrum begins with the un-normalized bandpowers in the $\alpha$-th $k$-bin:
+\begin{equation}
+\hat{q}_{\alpha} = \frac{1}{2}\mathbf{x}_{1}\mathbf{C}^{-1}\mathbf{Q}_{\alpha}\mathbf{C}^{-1}\mathbf{x}_{2} \label{eqn:q_hats}
+\end{equation}
+ the subscripts 1 and 2 denote independent sky measurements, $\mathbf{C}$ is the empirical covariance matrix ($\mathbf{C} = \left\langle \mathbf{x} \mathbf{x}^{\dagger} \right\rangle $), and $\mathbf{Q_{\alpha}}$ is a matrix operator which performs the Fourier transform and bins the data into the $\alpha$-th $k$-bin. $\mathbf{Q}_{\alpha}$ can formally be evaluated as $\mathbf{Q}_{\alpha} \equiv \frac{\delta \mathbf{C}}{\delta p_{\alpha}}$ or the derivative of the covariance with respect to the true bandpower in the $k$-bin.
+ 
+ The set of $\hat{q}_{\alpha}$ can be related to the properly normalized power spectrum estimates by a normalization matrix ($\mathbf{M}$)\footnote{In \citet{liu_tegmark2011} and \citet{liu_et_al2014b} \autoref{eqn:q_hats} is instead written as the normalized power ($\hat{p}_{\alpha}$) and relies on the estimation matrix $\mathbf{E_{\alpha}}$. We can relate the matrices $\mathbf{E}_{\alpha} = M_{\alpha}\mathbf{Q}_{\alpha}$ to compute the bandpowers directly. }:
+ \begin{equation}
+ \mathbf{\hat{p}} = \mathbf{M} \mathbf{\hat{q}}
+ \end{equation}
+The normalized bandpowers form our estimate of $P_{21}(\mathbf{k})$
+and are related to the true power spectrum $\mathbf{p}$ via a windowing matrix ($\mathbf{W}$):
+\begin{equation}
+\mathbf{\hat{p}} = \mathbf{W}\mathbf{p}
+\end{equation}
+In other words, the normalized power spectrum probes a linear combination of the true power spectrum estimates in each $k$-bin.
+To compute the normalization matrix, $\mathbf{M}$, \citet{liu_et_al2014b} shows that:
+\begin{equation}
+\mathbf{W} = \mathbf{M}\mathbf{F}
+\end{equation}
+where $\mathbf{F}$ is the Fischer information matrix and can be computed: 
+\begin{equation}
+\mathbf{F}_{\alpha \beta} = \frac{1}{2}\left[ \mathbf{C}^{-1}\mathbf{Q}_{\alpha}\mathbf{C}^{-1}\mathbf{Q}_{\beta} \right]
+\end{equation}
+The normalization requires a choice of the windowing function, $\mathbf{W}$, to compute the desired power power spectrum. A15 chooses $\mathbf{W}$ such that every $k$-bin is a linear combination of $k$ modes higher than itself. This restricts contaminating foregrounds to only the lowest $k$-bins without allowing them to contaminate high $k$-bins where the EoR signal may be stronger.
+
+Estimating the uncertainties in $\mathbf{\hat{p}}$ is accomplished via the bandpower covariance matrix:
+\begin{equation}
+\mathbf{\Sigma} = \left\langle \mathbf{\hat{p}}\mathbf{\hat{p}}^{\dagger} \right\rangle - \left\langle \mathbf{\hat{p}} \right\rangle  \left\langle \mathbf{\hat{p}}^{\dagger} \right\rangle = \mathbf{M}\mathbf{F}\mathbf{M}^{\dagger}
+\end{equation}
+%The popularity of this power spectrum estimator with recent radio telescopes has produced increasingly lower constraints on the 21cm power spectrum from the EoR. With this success, the possibility of information loss with the use of empirically estimated covariance matrices has become an increasingly relevant topic.
+
 }
 
 \section{Information loss in OQEs}\label{sec:sigloss}{
@@ -166,9 +203,10 @@ To summarize, lossless estimation requires \emph{a priori} knowledge of the stat
 As a result, random fluctuations in the data from noise may cause statistically independent sky measurements to appear covariant and thus be down-weighted during power spectrum estimation.
 
 
- Our investigation of potential signal loss in our power spectrum estimator begins by running data filtered by the FRF used in A15 and the optimal FRF through the power spectrum pipeline and comparing the relative amplitudes of the estimates with and without the inverse covariance weighting. The $2\sigma$ upper limits from both the inverse covariance weighted data (green) and non-weighted data (blue) from the A15 FRF and the optimal FRF are displayed in \autoref{fig:optimal_vs_ali}. Each panel also contains the $2\sigma$ theoretical noise sensitivity for each FRF computed using the 21cmSense package \citep{pober_et_al2013}. 
+ Our investigation of potential signal loss in our power spectrum estimator begins by running data filtered by the FRF used in A15 and the optimal FRF through the power spectrum pipeline and comparing the relative amplitudes of the estimates with and without the inverse covariance weighting. The $2\sigma$ upper limits from both the inverse covariance weighted data (green) and non-weighted data (blue) from the A15 FRF %and the optimal FRF
+ is displayed in \autoref{fig:ali_pi_vs_pc}. Each panel also contains the $2\sigma$ theoretical noise sensitivity for each FRF computed using the 21cmSense package \citep{pober_et_al2013}. 
  
-  Even with perfect foreground removal, a lossless power spectrum estimator would not be able to produce results below the thermal noise level. A possible solution is a miscalculation of the black curves in \autoref{fig:optimal_vs_ali}, however we continue our investigation assuming the thermal noise calculations from \citet{pober_et_al2013} are valid.
+  Even with perfect foreground removal, a lossless power spectrum estimator would not be able to produce results below the thermal noise level. A possible solution is a miscalculation of the black curves in \autoref{fig:ali_pi_vs_pc}, however we continue our investigation assuming the thermal noise calculations from \citet{pober_et_al2013} are valid.
   % We also focus our analysis on the use of the optimal FRF since the effect appears to be not heavily dependent on the choice of FRF.
  
  We then perform Monte-Carlo simulations of a Gaussian temperature field with a flat amplitude $P(k)$ over 60 sky realizations for all input signal levels in the range $[10^{4},10^{13}]\ (mK)^{2}$. In A15, the covariance of the data + injected sky signal was only applied to the injected sky signal to determine what loss would occur to this signal if it existed in the data.
@@ -179,7 +217,7 @@ As a result, random fluctuations in the data from noise may cause statistically 
  %The expected thermal noise level for $\PAPER$-$64$ is represented by the dashed green line.
   To further address this potential issue, the simulation is repeated with simulated visibilities consisting of a white noise signal instead of the observed data. For white noise visibilities, $\mathbf{C}$ should converge to $\mathbf{I}$ multiplied by a scalar quantity (the input noise power). The expected result from applying the Monte-Carlo simulation described above would be identical input and output power for all injected sky signals. The disagreement between these quantities and the similar output shapes of \autoref{fig:sigloss_data} and \autoref{fig:sigloss_noise} indicate the use of empirically estimated covariance matrices in this application of and OQE are causing signal loss. 
 
-	To overcome the effects of signal loss in our power spectrum estimator, we interpret data points and their error bars for each k-bin and injected sky signal as probability distributions. We then compute the probability for each sky signal that the output power of the Monte-Carlo simulations would be observed above the $1\sigma$ upper bounds of the data's power spectrum in each k-bin. This is interpreted as the probability that an underlying 21cm background signal of level $P_{inj}$ would have been detected if present in the data.
+	To overcome the effects of signal loss in our power spectrum estimator, we interpret data points and their error bars for each k-bin and injected sky signal as probability distributions. We then compute the probability for each sky signal that the output power of the Monte-Carlo simulations would be observed above the $1\sigma$ upper bounds of the data's power spectrum in each k-bin. This is interpreted as the probability that an underlying 21cm background signal of level $P_{inj}$ would have been detected if present in the data. An example of these probability curves for the A15 noise simulation is displayed in \autoref{fig:ali_noise_prob}.
 	
 	A hyperbolic tangent is fit to the probability of detection as a function of $P_{inj}$, from this an arbitrary level of confidence that an underlying signal would be detected can be assigned. We interpret this confidence level as our signal loss corrected upper limits.
  
@@ -206,6 +244,14 @@ As a result, random fluctuations in the data from noise may cause statistically 
 {\bf \color{red} these figures are awful but are mostly filling space currently until we make 'em pretty} \label{fig:sigloss_noise}}
 \end{figure}
 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.45\textwidth]{ali_noise_probability.png}
+%\includegraphics[width=.45\textwidth]{data/optimal_noise_loss_curve.png}
+\caption{A15 probability curve %Right: Optimal FRF loss curve noise 
+{\bf \color{red} these figures are awful but are mostly filling space currently until we make 'em pretty} \label{fig:ali_noise_prob}}
+\end{figure}
 
 \section{Discussion}\label{sec:discussion}{
 
